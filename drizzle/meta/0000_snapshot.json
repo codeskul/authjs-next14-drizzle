@@ -1,5 +1,5 @@
 {
-  "id": "49607780-c50c-4544-af1e-d65ab33c7ab6",
+  "id": "faa48f30-8bc4-4717-aa87-39a8517b4e98",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -10,7 +10,7 @@
       "columns": {
         "userId": {
           "name": "userId",
-          "type": "text",
+          "type": "serial",
           "primaryKey": false,
           "notNull": true
         },
@@ -114,7 +114,7 @@
         },
         "userId": {
           "name": "userId",
-          "type": "text",
+          "type": "serial",
           "primaryKey": false,
           "notNull": true
         },
@@ -150,7 +150,7 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "serial",
           "primaryKey": true,
           "notNull": true
         },
@@ -169,6 +169,12 @@
         "emailVerified": {
           "name": "emailVerified",
           "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "password": {
+          "name": "password",
+          "type": "text",
           "primaryKey": false,
           "notNull": false
         },

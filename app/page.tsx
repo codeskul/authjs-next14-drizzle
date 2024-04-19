@@ -1,16 +1,12 @@
-import { auth, signOut } from "@/auth";
-import { LogoutButton } from "@/components/auth/logout-button";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-export default async function Home() {
-  const session = await auth();
+export default function Home() {
   return (
     <div className="flex items-center justify-center h-full">
-      <Button>Hello</Button>
-      <p>{JSON.stringify(session)}</p>
-      <LogoutButton>
-        <Button>Sign out</Button>
-      </LogoutButton>
+      <Button asChild>
+        <Link href="/login">Login</Link>
+      </Button>
     </div>
   );
 }

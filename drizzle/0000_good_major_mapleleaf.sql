@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS "account" (
-	"userId" text NOT NULL,
+	"userId" serial NOT NULL,
 	"type" text NOT NULL,
 	"provider" text NOT NULL,
 	"providerAccountId" text NOT NULL,
@@ -15,15 +15,16 @@ CREATE TABLE IF NOT EXISTS "account" (
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "session" (
 	"sessionToken" text PRIMARY KEY NOT NULL,
-	"userId" text NOT NULL,
+	"userId" serial NOT NULL,
 	"expires" timestamp NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "user" (
-	"id" text PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"name" text,
 	"email" text NOT NULL,
 	"emailVerified" timestamp,
+	"password" text,
 	"image" text
 );
 --> statement-breakpoint
